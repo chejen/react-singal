@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import { Outlet, Link } from 'react-router-dom';
 import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import './App.css'
@@ -21,13 +22,15 @@ function App() {
         <button onClick={() => setCount((count) => count + 1)}>
           count is {count}
         </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
       </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
+      <Link to={`albums/01`}>(Album) Sing When You're Winning</Link>
+      {' | '}
+      <Link to={`albums/02`}>(Album) Poems，Prayers and Promises</Link>
+      {' | '}
+      <Link to={`books/Java`}>(Book) Java</Link>
+      {' | '}
+      <Link to={`books/C++`}>(Book) C++</Link>
+      <p><Outlet /></p>
     </>
   )
 }
